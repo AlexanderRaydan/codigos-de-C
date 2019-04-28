@@ -123,6 +123,8 @@ int automata(char s[]){
 			return numero;
 		}
 
+		return 0;
+
 }
 
 
@@ -130,12 +132,12 @@ int main(int argc, char const *argv[])
 
 {
 	
-	char s[]= "+12345";
+	char s[]= "+1245";
 
 
 	printf("%i\n",automata(s));
 
-	//printf("%c\n", 4[s]); //LOOOOOOOOOOOOOOOOO000000OOOOOOOLLLLLLLLL
+	//printf("%c\n", 4[s]); //LOOOOOOO0000OOOOOOOOOO000000OOOOOOOLLLLLLLLL
 
 		
 	return 0;
