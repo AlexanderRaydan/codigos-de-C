@@ -102,6 +102,7 @@
 		if(e==2)
 
 			return auxpos - auxneg ;
+
 		
 
 		return 0;
