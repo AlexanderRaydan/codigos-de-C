@@ -114,7 +114,7 @@ int main(int argc, char const *argv[])
 {
 
 
-	char vec[]="+1234-5678";
+	char vec[]="+564-678+65465+768765-97987";
 
 	printf("%d\n", automata(vec));
 
