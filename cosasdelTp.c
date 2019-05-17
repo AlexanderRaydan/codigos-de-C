@@ -18,5 +18,7 @@ int main(int argc, char const *argv[])
 	printf("%i %i %i %i %i %i",x,y,z,u,v,t);
 
 
+
+
 	return 0;
 }
