@@ -118,7 +118,5 @@ int main(int argc, char const *argv[])
 
 	printf("%d\n", automata(vec));
 
-
-
 	return 0;
 }
