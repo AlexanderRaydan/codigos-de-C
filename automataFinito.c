@@ -139,7 +139,6 @@ int main(int argc, char const *argv[])
 
 	//printf("%c\n", 4[s]); //LOOOOOOO0000OOOOOOOOOO000000OOOOOOOLLLLLLLLL
 
-		
 	return 0;
 }
 
