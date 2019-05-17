@@ -39,6 +39,7 @@
 		int auxmulti = 1;
 		int auxmulti2 = 0;
 		bool negativo = false;
+		bool signo = true;
 
 		if(vec[0] != '+' && vec[0] != '-'){
 
@@ -73,12 +74,22 @@
 
 	i = 0;
 
+	
 	while(vec[i]){
 
 
-		if(vec[i] == '+'){
+		if(vec[i] == '+' || vec[i] == '-'){
 
-			i++;
+			if(vec[i] == '+')
+
+				signo = true;
+			 else
+
+				signo = false;
+
+
+				i++;
+			
 
 			while(vec[i] != '+' && vec[i] != '-' && vec[i] != '*' && vec[i]){
 
@@ -89,12 +100,16 @@
 
 			if(vec[i] != '*'){
 
-				auxpos = auxpos + num1;
+				if(signo)
+
+					auxpos +=  num1;
+
+				else
+
+					auxneg +=  num1;
+
 
 				num1 = 0;
-
-				printf("%i\n", auxpos );
-				printf("%s\n","ee" );
 
 			}
 
@@ -102,7 +117,13 @@
 
 				i++;
 
-				auxmulti = num1;
+
+				if(signo)
+
+					auxmulti = num1;
+				else
+					auxmulti = num1*(-1);
+
 
 				num1 = 0;
 
@@ -150,99 +171,15 @@
 
 					if(negativo){
 
-					auxmulti2 = auxmulti2 + auxmulti*(-1);
+					auxmulti2 += auxmulti*(-1);
 
 					} else 
 					
-					auxmulti2 = auxmulti2 + auxmulti;
+					auxmulti2 += auxmulti;
 	
 			}
 
 
-		}
-
-		if(vec[i] == '-'){
-
-			i++;
-
-			while(vec[i] != '+' && vec[i] != '-' && vec[i] != '*' && vec[i]){
-
-				num1= num1*10 + (vec[i] - '0');
-
-				i++;
-			}
-
-			if(vec[i] != '*'){
-
-				auxneg = auxneg + num1;
-				num1 = 0;
-
-				printf("%i\n", auxneg );
-				printf("%s\n","ee" );
-
-			}
-
-			if(vec[i] == '*'){
-
-				i++;
-
-				auxmulti = num1*(-1);
-
-				num1 = 0;
-
-				if(vec[i] == '-'){
-
-					i++;
-					negativo = true;
-
-				}
-
-				while(vec[i] != '+' && vec[i] != '-' && vec[i]){
-
-					while(vec[i] != '+' && vec[i] != '-' && vec[i] != '*' && vec[i]){
-
-						num2 = num2*10 + (vec[i] - '0');
-
-						i++;
-					}
-
-					if(vec[i] == '*'){
-
-						i++;
-
-						if(vec[i] == '-'){
-
-							i++;
-
-							auxmulti = auxmulti*num2*(-1);
-
-
-							} else {
-
-								auxmulti = auxmulti*num2;
-							}
-
-						num2 = 0;
-
-						} else {
-
-							auxmulti = auxmulti * num2;
-						}
-
-					}
-
-
-					if(negativo){
-
-					auxmulti2 = auxmulti2 + auxmulti*(-1);
-
-					} else 
-					
-					auxmulti2 = auxmulti2 + auxmulti;
-	
-			}
-
-	
 		}
 
 	}
@@ -251,12 +188,11 @@
 }
 
 
-
 int main(int argc, char const *argv[])
 
 {
 
-	char vec[]="+3+4*-3";
+	char vec[]="-4+4*3*-4*5-4";
 
 	printf("%d\n", automata(vec));
 
