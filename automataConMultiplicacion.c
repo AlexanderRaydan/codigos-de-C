@@ -192,11 +192,10 @@ int main(int argc, char const *argv[])
 
 {
 
-	char vec[]="-4+4*3*-4*5-4";
+	char vec[]="-4+4*3*-4*-3*5-4";
 
 	printf("%d\n", automata(vec));
 
 
 	return 0;
 }
-|
